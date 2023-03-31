@@ -1,0 +1,34 @@
+---
+version: 2
+sources:
+- name: "prophecy-development.dataset"
+  database: "prophecy-development"
+  schema: "dataset"
+  config:
+    enabled: true
+  tables:
+  - name: "raw_orders"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Integer"
+    - name: "user_id"
+      dataType:
+        type: "Integer"
+    - name: "order_date"
+      dataType:
+        type: "Date"
+    - name: "status"
+      dataType:
+        type: "String"
+  - name: "raw_customers"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Integer"
+    - name: "first_name"
+      dataType:
+        type: "String"
+    - name: "last_name"
+      dataType:
+        type: "String"

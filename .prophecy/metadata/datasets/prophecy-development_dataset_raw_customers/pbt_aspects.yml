@@ -1,0 +1,17 @@
+version: 1
+schema:
+  providerType: BigQuery
+  fields:
+  - name: id
+    dataType:
+      type: Integer
+  - name: first_name
+    dataType:
+      type: String
+  - name: last_name
+    dataType:
+      type: String
+sqlInfo:
+  databaseName: prophecy-development
+  schemaName: dataset
+  tableName: raw_customers

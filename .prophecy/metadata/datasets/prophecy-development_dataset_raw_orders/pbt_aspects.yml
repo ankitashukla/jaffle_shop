@@ -1,0 +1,20 @@
+version: 1
+schema:
+  providerType: BigQuery
+  fields:
+  - name: id
+    dataType:
+      type: Integer
+  - name: user_id
+    dataType:
+      type: Integer
+  - name: order_date
+    dataType:
+      type: Date
+  - name: status
+    dataType:
+      type: String
+sqlInfo:
+  databaseName: prophecy-development
+  schemaName: dataset
+  tableName: raw_orders
