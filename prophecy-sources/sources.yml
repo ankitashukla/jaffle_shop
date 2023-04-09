@@ -32,3 +32,17 @@ sources:
     - name: "last_name"
       dataType:
         type: "String"
+  - name: "raw_payments"
+    columns:
+    - name: "id"
+      dataType:
+        type: "Integer"
+    - name: "order_id"
+      dataType:
+        type: "Integer"
+    - name: "payment_method"
+      dataType:
+        type: "String"
+    - name: "amount"
+      dataType:
+        type: "Integer"

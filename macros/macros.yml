@@ -6,8 +6,10 @@ macros:
   arguments:
   - name: "column_name"
     type: "unknown"
+    description: "no major desc"
   - name: "decimal_places"
     type: "unknown"
+    description: "param with default value"
   macroType: "expression"
 - name: "nested_cents"
   description: "Nested Cents "
@@ -20,3 +22,6 @@ macros:
   - name: "table_name"
     type: "unknown"
   macroType: "query"
+- name: "m1"
+  arguments: []
+  macroType: "expression"

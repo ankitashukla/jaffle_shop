@@ -1,0 +1,20 @@
+version: 1
+schema:
+  providerType: BigQuery
+  fields:
+  - name: id
+    dataType:
+      type: Integer
+  - name: order_id
+    dataType:
+      type: Integer
+  - name: payment_method
+    dataType:
+      type: String
+  - name: amount
+    dataType:
+      type: Integer
+sqlInfo:
+  databaseName: prophecy-development
+  schemaName: dataset
+  tableName: raw_payments

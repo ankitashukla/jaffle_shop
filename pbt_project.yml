@@ -29,6 +29,14 @@ datasets:
     modifiedAt: '2023-03-31 10:14:13'
     mode: ''
     physicalDatasets: {}
+  .prophecy/metadata/datasets/prophecy-development_dataset_raw_payments:
+    name: prophecy-development.dataset.raw_payments
+    description: ''
+    author: kishore@simpledatalabs.com
+    createdAt: '2023-03-31 20:45:06'
+    modifiedAt: '2023-03-31 20:45:06'
+    mode: ''
+    physicalDatasets: {}
 templates: {}
 jobs: {}
 functions:
@@ -41,37 +49,14 @@ functions:
   expressions: {}
 subgraphs: {}
 sqlModels:
-  .prophecy/metadata/sqlmodels/stg_customers:
-    name: stg_customers
-    description: null
-    author: kishore@simpledatalabs.com
-    files:
-    - .prophecy/ide/models/stg_customers.json
-    - testJaffleYaDpMg0m/models/staging/stg_customers.sql
-    sqlDependencies:
-      models: []
-      datasets: []
-    createdAt: '2023-03-31 10:10:32'
-    modifiedAt: '2023-03-31 10:10:32'
   .prophecy/metadata/sqlmodels/stg_orders:
     name: stg_orders
     description: null
     author: kishore@simpledatalabs.com
     files:
+    - models/staging/stg_orders.sql
     - .prophecy/ide/models/stg_orders.json
-    - testJaffleYaDpMg0m/models/staging/stg_orders.sql
-    sqlDependencies:
-      models: []
-      datasets: []
-    createdAt: '2023-03-31 10:10:32'
-    modifiedAt: '2023-03-31 10:10:32'
-  .prophecy/metadata/sqlmodels/stg_payments:
-    name: stg_payments
-    description: null
-    author: kishore@simpledatalabs.com
-    files:
-    - .prophecy/ide/models/stg_payments.json
-    - testJaffleYaDpMg0m/models/staging/stg_payments.sql
+    - models/staging/schema.yml
     sqlDependencies:
       models: []
       datasets: []
@@ -79,11 +64,13 @@ sqlModels:
     modifiedAt: '2023-03-31 10:10:32'
   .prophecy/metadata/sqlmodels/orders:
     name: orders
-    description: null
+    description: This table has basic information about orders, as well as some derived
+      facts based on payments
     author: kishore@simpledatalabs.com
     files:
+    - models/orders.sql
     - .prophecy/ide/models/orders.json
-    - testJaffleYaDpMg0m/models/orders.sql
+    - models/schema.yml
     sqlDependencies:
       models: []
       datasets: []
@@ -91,11 +78,13 @@ sqlModels:
     modifiedAt: '2023-03-31 10:10:32'
   .prophecy/metadata/sqlmodels/customers:
     name: customers
-    description: null
+    description: This table has basic information about a customer, as well as some
+      derived facts based on a customer's orders
     author: kishore@simpledatalabs.com
     files:
+    - models/customers.sql
     - .prophecy/ide/models/customers.json
-    - testJaffleYaDpMg0m/models/customers.sql
+    - models/schema.yml
     sqlDependencies:
       models: []
       datasets: []
@@ -106,8 +95,8 @@ sqlModels:
     description: null
     author: kishore@simpledatalabs.com
     files:
+    - models/macro_model.sql
     - .prophecy/ide/models/macro_model.json
-    - testJaffleYaDpMg0m/models/macro_model.sql
     sqlDependencies:
       models: []
       datasets:
@@ -115,6 +104,138 @@ sqlModels:
       - 271/.prophecy/metadata/datasets/prophecy-development_dataset_raw_customers
     createdAt: '2023-03-31 10:13:53'
     modifiedAt: '2023-03-31 10:13:53'
+  .prophecy/metadata/sqlmodels/stg_payments:
+    name: stg_payments
+    description: null
+    author: kishore@simpledatalabs.com
+    files:
+    - models/staging/stg_payments.sql
+    - .prophecy/ide/models/stg_payments.json
+    - models/staging/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-03-31 10:10:32'
+    modifiedAt: '2023-03-31 10:10:32'
+  .prophecy/metadata/sqlmodels/testModel:
+    name: testModel
+    description: null
+    author: kishore@simpledatalabs.com
+    files:
+    - models/testModel.sql
+    - .prophecy/ide/models/testModel.json
+    sqlDependencies:
+      models: []
+      datasets:
+      - 271/.prophecy/metadata/datasets/prophecy-development_dataset_raw_payments
+      - 271/.prophecy/metadata/datasets/prophecy-development_dataset_raw_customers
+    createdAt: '2023-03-31 20:26:22'
+    modifiedAt: '2023-03-31 20:26:22'
+  .prophecy/metadata/sqlmodels/stg_customers:
+    name: stg_customers
+    description: null
+    author: kishore@simpledatalabs.com
+    files:
+    - models/staging/stg_customers.sql
+    - .prophecy/ide/models/stg_customers.json
+    - models/staging/schema.yml
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-03-31 10:10:32'
+    modifiedAt: '2023-03-31 10:10:32'
+sqlMacros:
+  .prophecy/metadata/sqlmacros/audit:
+    name: audit
+    macroType: query
+    description: null
+    author: kishore@simpledatalabs.com
+    files:
+    - macros/audit.sql
+    - macros/macros.yml
+    createdAt: '2023-04-08 15:41:01'
+    modifiedAt: '2023-04-08 15:41:01'
+  .prophecy/metadata/sqlmacros/cents:
+    name: cents
+    macroType: expression
+    description: This is cents to dollar
+    author: kishore@simpledatalabs.com
+    files:
+    - macros/cents.sql
+    - macros/macros.yml
+    createdAt: '2023-04-08 15:41:01'
+    modifiedAt: '2023-04-08 15:41:01'
+  .prophecy/metadata/sqlmacros/m1:
+    name: m1
+    macroType: expression
+    description: null
+    author: kishore@simpledatalabs.com
+    files:
+    - macros/m1.sql
+    - macros/macros.yml
+    createdAt: '2023-04-08 15:41:01'
+    modifiedAt: '2023-04-08 15:41:01'
+  .prophecy/metadata/sqlmacros/nested_cents:
+    name: nested_cents
+    macroType: expression
+    description: 'Nested Cents '
+    author: kishore@simpledatalabs.com
+    files:
+    - macros/nested_cents.sql
+    - macros/macros.yml
+    createdAt: '2023-04-08 15:41:01'
+    modifiedAt: '2023-04-08 15:41:01'
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/raw_customers:
+    name: raw_customers
+    description: null
+    author: kishore@simpledatalabs.com
+    files:
+    - seeds/raw_customers.csv
+    createdAt: '2023-04-08 15:41:01'
+    modifiedAt: '2023-04-08 15:41:01'
+  .prophecy/metadata/sqlseeds/raw_orders:
+    name: raw_orders
+    description: null
+    author: kishore@simpledatalabs.com
+    files:
+    - seeds/raw_orders.csv
+    createdAt: '2023-04-08 15:41:01'
+    modifiedAt: '2023-04-08 15:41:01'
+  .prophecy/metadata/sqlseeds/raw_payments:
+    name: raw_payments
+    description: null
+    author: kishore@simpledatalabs.com
+    files:
+    - seeds/raw_payments.csv
+    createdAt: '2023-04-08 15:41:01'
+    modifiedAt: '2023-04-08 15:41:01'
+sqlSources:
+  .prophecy/metadata/sqlsources/prophecy-development_dataset:
+    name: prophecy-development.dataset
+    description: null
+    author: kishore@simpledatalabs.com
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2023-04-08 15:41:01'
+    modifiedAt: '2023-04-08 15:41:01'
+    tables:
+    - name: raw_orders
+      description: null
+      author: kishore@simpledatalabs.com
+      createdAt: '2023-04-08 15:41:01'
+      modifiedAt: '2023-04-08 15:41:01'
+    - name: raw_customers
+      description: null
+      author: kishore@simpledatalabs.com
+      createdAt: '2023-04-08 15:41:01'
+      modifiedAt: '2023-04-08 15:41:01'
+    - name: raw_payments
+      description: null
+      author: kishore@simpledatalabs.com
+      createdAt: '2023-04-08 15:41:01'
+      modifiedAt: '2023-04-08 15:41:01'
+sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
   description: null
